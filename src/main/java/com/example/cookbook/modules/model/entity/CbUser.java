@@ -1,4 +1,4 @@
-package com.example.springtestdemo.modules.model.entity;
+package com.example.cookbook.modules.model.entity;
 
 import lombok.Data;
 

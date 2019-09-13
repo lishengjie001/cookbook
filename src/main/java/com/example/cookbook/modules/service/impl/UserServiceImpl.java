@@ -1,8 +1,9 @@
-package com.example.springtestdemo.modules.service.impl;
+package com.example.cookbook.modules.service.impl;
 
 
-import com.example.springtestdemo.modules.mapper.UserMapper;
-import com.example.springtestdemo.modules.service.UserService;
+import com.example.cookbook.modules.mapper.UserMapper;
+import com.example.cookbook.modules.service.UserService;
+
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

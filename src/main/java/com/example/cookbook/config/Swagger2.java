@@ -1,4 +1,4 @@
-package com.example.springtestdemo.config;
+package com.example.cookbook.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.springtestdemo.modules.mapper.CookBookMapper">
-    <select id="selectAll" resultType="com.example.springtestdemo.Bean.CookUserBean">
+<mapper namespace="com.example.cookbook.modules.mapper.CookBookMapper">
+    <select id="selectAll" resultType="com.example.cookbook.Bean.CookUserBean">
      SELECT cb.cover_pic,cb.like_num,
      cb.title,cb.synopsis,u.avatar,u.nickname from cb_cookbook
      as cb LEFT JOIN cb_user as u on cb.uploader=u.uid
+    </select>
+    <select id="search" parameterType="String" resultType="com.example.cookbook.modules.model.entity.CbCookbook">
+      SELECT * from cb_cookbook where title like "%"#{name}"%"
     </select>
 </mapper>

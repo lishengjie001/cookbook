@@ -1,17 +1,19 @@
-package com.example.springtestdemo.modules.controller;
+package com.example.cookbook.modules.controller;
 
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.example.springtestdemo.modules.model.entity.CbCookbook;
-import com.example.springtestdemo.Bean.CookUserBean;
-import com.example.springtestdemo.modules.service.impl.CookBookServiceImpl;
-import com.example.springtestdemo.modules.service.impl.UserServiceImpl;
+import com.example.cookbook.Bean.CookUserBean;
+import com.example.cookbook.modules.model.entity.CbCookbook;
+import com.example.cookbook.modules.service.impl.CookBookServiceImpl;
+import com.example.cookbook.modules.service.impl.UserServiceImpl;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -55,6 +57,15 @@ public class HelloController {
             }
         }
     return jsonArray;
+    }
+
+
+    @ApiOperation(value = "搜索",notes = "搜索")
+    @GetMapping("/search")
+    public List<CbCookbook> search(HttpServletRequest request){
+        String name = request.getParameter("name");
+        List<CbCookbook> cbCookbookList= cookBookService.search(name);
+        return cbCookbookList;
     }
 
 }

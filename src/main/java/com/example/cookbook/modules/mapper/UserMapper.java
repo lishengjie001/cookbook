@@ -1,4 +1,4 @@
-package com.example.springtestdemo.modules.mapper;
+package com.example.cookbook.modules.mapper;
 
 
 import com.example.springtestdemo.modules.model.entity.CbUser;
